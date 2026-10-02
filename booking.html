@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Tsholofelo Guest Lodge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">BOOK DIRECT & SAVE 10% | FREE BREAKFAST WITH EVERY STAY | CALL: +267 7123 4567</div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Tsholofelo <span>Lodge</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="booking.html" class="active">Booking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <a href="booking.html"><i class="fas fa-calendar-check"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Book Your Stay</h1>
+        <p>Reserve your room today and experience the Tsholofelo difference.</p>
+    </section>
+
+    <main class="form-container">
+        <form onsubmit="submitBooking(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="book-name">Full Name</label>
+                    <input type="text" id="book-name" required placeholder="e.g. Kagiso Sithole">
+                </div>
+                <div class="form-group">
+                    <label for="book-email">Email Address</label>
+                    <input type="email" id="book-email" required placeholder="you@example.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="book-phone">Phone Number</label>
+                    <input type="tel" id="book-phone" required placeholder="+267 ...">
+                </div>
+                <div class="form-group">
+                    <label for="book-country">Country of Origin</label>
+                    <input type="text" id="book-country" placeholder="e.g. Botswana" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="book-checkin">Check-in Date</label>
+                    <input type="date" id="book-checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-checkout">Check-out Date</label>
+                    <input type="date" id="book-checkout" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="book-room">Room Type</label>
+                    <select id="book-room" required>
+                        <option value="">Select a room...</option>
+                        <option>Standard Double Room — P750/night</option>
+                        <option>Deluxe Twin Room — P950/night</option>
+                        <option>Executive Suite — P1450/night</option>
+                        <option>Family Cottage — P1800/night</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="book-guests">Number of Guests</label>
+                    <select id="book-guests" required>
+                        <option value="">Select...</option>
+                        <option>1 Guest</option>
+                        <option>2 Guests</option>
+                        <option>3 Guests</option>
+                        <option>4 Guests</option>
+                        <option>5+ Guests</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="book-notes">Special Requests</label>
+                <textarea id="book-notes" rows="4" placeholder="Airport pickup, late check-in, dietary preferences..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">Request Booking</button>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light); font-size: 0.9rem;">We will confirm your reservation within 24 hours.</p>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Tsholofelo Lodge</h4>
+                <p>Proudly Motswana-owned guest lodge offering warm hospitality and elegant comfort in the heart of Gaborone.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="rooms.html">Our Rooms</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li>Plot 12345, Extension 12</li>
+                    <li>Gaborone, Botswana</li>
+                    <li>+267 7123 4567</li>
+                    <li>stay@tsholofelolodge.co.bw</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div style="font-size: 1.5rem; display: flex; gap: 15px;">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tripadvisor"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Tsholofelo Guest Lodge. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
