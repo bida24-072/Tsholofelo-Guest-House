@@ -30,13 +30,43 @@
     </header>
 
     <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Your Home Away<br>From Home in Gaborone</h1>
-                <p>Warm Hospitality • Elegant Comfort • Local Charm</p>
-                <a href="rooms.html" class="btn btn-gold">Explore Our Rooms</a>
+        <!-- ============================================
+             SLIDESHOW HERO
+        ============================================ -->
+        <section class="slideshow">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <h1>Your Home Away<br>From Home in Gaborone</h1>
+                    <p>Warm Hospitality • Elegant Comfort • Local Charm</p>
+                    <a href="rooms.html" class="btn btn-gold">Explore Our Rooms</a>
+                </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <h1>Elegantly Appointed<br>Rooms & Suites</h1>
+                    <p>Designed for Rest • Built for Comfort</p>
+                    <a href="rooms.html" class="btn btn-gold">View Our Rooms</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+                <div class="slide-content">
+                    <h1>Relax by the Pool,<br>Reconnect with Nature</h1>
+                    <p>Tranquil Gardens • Sparkling Pool • Warm Sun</p>
+                    <a href="booking.html" class="btn btn-gold">Book Your Stay</a>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slide-nav slide-prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="slide-nav slide-next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Dots -->
+            <div class="slide-dots" id="slide-dots"></div>
         </section>
 
         <!-- BOOKING BAR -->
