@@ -1,4 +1,84 @@
 /* ============================================
+   SLIDESHOW LOGIC
+============================================ */
+let currentSlide = 0;
+let slideInterval;
+const SLIDE_DURATION = 6000; // 6 seconds per slide
+
+function initSlideshow() {
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('slide-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    // Create dots dynamically
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    });
+
+    // Auto advance
+    startAutoSlide();
+
+    // Pause on hover
+    const slideshow = document.querySelector('.slideshow');
+    if (slideshow) {
+        slideshow.addEventListener('mouseenter', stopAutoSlide);
+        slideshow.addEventListener('mouseleave', startAutoSlide);
+    }
+}
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    if (!slides.length) return;
+
+    // Wrap around
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+    restartAutoSlide();
+}
+
+function goToSlide(index) {
+    showSlide(index);
+    restartAutoSlide();
+}
+
+function startAutoSlide() {
+    stopAutoSlide();
+    slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, SLIDE_DURATION);
+}
+
+function stopAutoSlide() {
+    if (slideInterval) clearInterval(slideInterval);
+}
+
+function restartAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+}
+
+/* Keyboard navigation */
+document.addEventListener('keydown', (e) => {
+    if (document.querySelector('.slideshow')) {
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+        if (e.key === 'ArrowRight') changeSlide(1);
+    }
+});
+
+/* ============================================
    ROOM DATA
 ============================================ */
 const rooms = [
@@ -109,8 +189,9 @@ function searchAvailability(e) {
    INITIALIZATION
 ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
-    renderRooms('featured-rooms', 3);  // Home page shows 3
-    renderRooms('all-rooms');          // Rooms page shows all
+    initSlideshow();                    // Start slideshow
+    renderRooms('featured-rooms', 3);   // Home shows 3 rooms
+    renderRooms('all-rooms');           // Rooms page shows all
 
     // Set minimum date on booking inputs to today
     const today = new Date().toISOString().split('T')[0];
