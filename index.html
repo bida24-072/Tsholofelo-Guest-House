@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsholofelo Guest Lodge | Premium Stay in Gaborone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">BOOK DIRECT & SAVE 10% | FREE BREAKFAST WITH EVERY STAY | CALL: +267 7123 4567</div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Tsholofelo <span>Lodge</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <a href="booking.html"><i class="fas fa-calendar-check"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Home Away<br>From Home in Gaborone</h1>
+                <p>Warm Hospitality • Elegant Comfort • Local Charm</p>
+                <a href="rooms.html" class="btn btn-gold">Explore Our Rooms</a>
+            </div>
+        </section>
+
+        <!-- BOOKING BAR -->
+        <section class="booking-bar">
+            <div class="container">
+                <form class="booking-grid" onsubmit="searchAvailability(event)">
+                    <div class="booking-field">
+                        <label>Check-in</label>
+                        <input type="date" id="checkin" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Check-out</label>
+                        <input type="date" id="checkout" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Guests</label>
+                        <select id="guests">
+                            <option>1 Guest</option>
+                            <option>2 Guests</option>
+                            <option>3 Guests</option>
+                            <option>4 Guests</option>
+                            <option>5+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="booking-field">
+                        <label>Room Type</label>
+                        <select>
+                            <option>Any Room</option>
+                            <option>Standard Double</option>
+                            <option>Deluxe Twin</option>
+                            <option>Executive Suite</option>
+                            <option>Family Cottage</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-gold">Check Availability</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- INFO BAR -->
+        <section class="info-bar">
+            <div class="container info-grid">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Prime Location</h4>
+                    <p>Plot 12345, Extension 12<br>Gaborone, Botswana</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Check-in Times</h4>
+                    <p>Check-in: 2:00 PM<br>Check-out: 10:00 AM</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Reservations</h4>
+                    <p>+267 7123 4567<br>24/7 Guest Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED ROOMS -->
+        <section class="rooms-section container">
+            <h2 class="section-title">Featured Rooms</h2>
+            <div class="rooms-grid" id="featured-rooms"></div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="rooms.html" class="btn">View All Rooms</a>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience-section">
+            <div class="container experience-content">
+                <div class="experience-text">
+                    <h2>An Authentic Botswana Welcome</h2>
+                    <p>At Tsholofelo Lodge, hospitality isn't just a service — it's our heritage. From the moment you arrive, you'll experience the warmth and generosity that Batswana are known for.</p>
+                    <p>Whether you're here for business, a family holiday, or a quiet escape, our team will make sure every detail of your stay is comfortable, memorable, and uniquely ours.</p>
+                    <a href="about.html" class="btn btn-outline">Read Our Story</a>
+                </div>
+                <div class="experience-img">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Lodge Experience">
+                </div>
+            </div>
+        </section>
+
+        <!-- AMENITIES -->
+        <section class="amenities-section container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <i class="fas fa-wifi"></i>
+                    <h4>Free Wi-Fi</h4>
+                    <p>High-speed internet throughout the property</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h4>Swimming Pool</h4>
+                    <p>Cool off in our sparkling outdoor pool</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Breakfast Included</h4>
+                    <p>Complimentary full breakfast each morning</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-car"></i>
+                    <h4>Secure Parking</h4>
+                    <p>24-hour gated parking for all guests</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-concierge-bell"></i>
+                    <h4>24/7 Reception</h4>
+                    <p>Round-the-clock guest support</p>
+                </div>
+                <div class="amenity-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Garden & Terrace</h4>
+                    <p>Relax in our tranquil outdoor spaces</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Tsholofelo Lodge</h4>
+                <p>Proudly Motswana-owned guest lodge offering warm hospitality and elegant comfort in the heart of Gaborone.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="rooms.html">Our Rooms</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li>Plot 12345, Extension 12</li>
+                    <li>Gaborone, Botswana</li>
+                    <li>+267 7123 4567</li>
+                    <li>stay@tsholofelolodge.co.bw</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div style="font-size: 1.5rem; display: flex; gap: 15px;">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tripadvisor"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Tsholofelo Guest Lodge. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
